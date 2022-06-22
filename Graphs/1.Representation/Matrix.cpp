@@ -4,8 +4,10 @@ using namespace std;
 int main() {
 	int n=6;
 	vector<vector<int>> edges={{0,3},{1,2},{1,5},{2,4},{3,5},{5,4},{5,0}};
+	
 
 	int matrix[n][n];
+	// Memset() is a C++ function. It copies a single character for a specified number of times to an object. 
 	memset(matrix,0,sizeof matrix);
 
 	for(int i=0;i<edges.size();i++) {
