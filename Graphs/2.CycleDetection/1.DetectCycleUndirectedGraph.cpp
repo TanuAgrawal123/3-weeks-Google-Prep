@@ -1,12 +1,17 @@
+// Cycle Detection can be done using DFS , BFS
+
+Below code is DFS one // remember parent concept and dfs concept
 #include<bits/stdc++.h>
 using namespace std;
 
 bool detectCycle(unordered_map<int, vector<int>>& m, unordered_set<int>& visited, int node, int parent) {
 	visited.insert(node);
 	for(auto nbr: m[node]) {
+		//node is not visited
 		if(visited.find(nbr) == visited.end()) {
 			if(detectCycle(m,visited,nbr,node)) return true;
 		}
+	
 		else if(nbr != parent) {
 			return true;
 		}
